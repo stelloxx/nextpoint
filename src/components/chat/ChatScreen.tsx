@@ -9,7 +9,7 @@ function QuickActionButton({ action }: { action: QuickAction }) {
     message: <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-blue fill-none stroke-width-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>,
   };
   return (
-    <button className="flex items-center gap-3.5 px-4.5 py-3.5 rounded-xl bg-surface border-1.5 border-blue cursor-pointer">
+    <button className="flex items-center gap-4 px-[18px] py-[14px] rounded-xl bg-surface border-1.5 border-blue cursor-pointer">
       <div className="w-10 h-10 rounded-lg bg-blue-light flex items-center justify-center">
         {iconMap[action.icon] || iconMap.search}
       </div>

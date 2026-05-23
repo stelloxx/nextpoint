@@ -7,7 +7,7 @@ import { StatusBar, BottomNav, MapScreen, ToursScreen, RoutesScreen, ChatScreen,
 const defaultCity: City = cities[0];
 
 export default function App() {
-  const [activeScreen, setActiveScreen] = useState<Screen>('tours');
+  const [activeScreen, setActiveScreen] = useState<Screen>('map');
   const [city, setCity] = useState<City>(defaultCity);
   const [citySelectorOpen, setCitySelectorOpen] = useState(false);
 
@@ -20,21 +20,31 @@ export default function App() {
       <div className="w-[390px] h-[844px] rounded-[44px] overflow-hidden relative bg-bg shadow-[0_0_0_8px_#222,0_0_0_10px_#444,0_20px_60px_rgba(0,0,0,0.4)]">
         <StatusBar />
         <div className="h-[calc(100%-44px)] relative overflow-hidden">
-          <div className={`absolute inset-0 ${activeScreen === 'map' ? 'flex' : 'hidden'} flex-col`}>
-            <MapScreen />
-          </div>
-          <div className={`absolute inset-0 overflow-y-auto scrollbar-none ${activeScreen === 'tours' ? 'flex flex-col' : 'hidden'}`}>
-            <ToursScreen />
-          </div>
-          <div className={`absolute inset-0 ${activeScreen === 'routes' ? 'flex flex-col' : 'hidden'}`}>
-            <RoutesScreen />
-          </div>
-          <div className={`absolute inset-0 ${activeScreen === 'chat' ? 'flex flex-col' : 'hidden'}`}>
-            <ChatScreen />
-          </div>
-          <div className={`absolute inset-0 overflow-y-auto scrollbar-none ${activeScreen === 'profile' ? 'flex flex-col' : 'hidden'}`}>
-            <ProfileScreen />
-          </div>
+          {activeScreen === 'map' && (
+            <div className="absolute inset-0 flex flex-col">
+              <MapScreen />
+            </div>
+          )}
+          {activeScreen === 'tours' && (
+            <div className="absolute inset-0 overflow-y-auto scrollbar-none flex flex-col">
+              <ToursScreen />
+            </div>
+          )}
+          {activeScreen === 'routes' && (
+            <div className="absolute inset-0 flex flex-col">
+              <RoutesScreen />
+            </div>
+          )}
+          {activeScreen === 'chat' && (
+            <div className="absolute inset-0 flex flex-col">
+              <ChatScreen />
+            </div>
+          )}
+          {activeScreen === 'profile' && (
+            <div className="absolute inset-0 overflow-y-auto scrollbar-none flex flex-col">
+              <ProfileScreen />
+            </div>
+          )}
         </div>
         <BottomNav />
 
