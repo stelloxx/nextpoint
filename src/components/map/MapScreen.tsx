@@ -4,7 +4,7 @@ import { places } from '../../api/data';
 
 export function MapScreen() {
   return (
-    <div className="absolute inset-0 flex flex-col">
+    <div className="absolute inset-0 flex flex-col pb-[84px]">
       {/* Live Leaflet map */}
       <div className="absolute inset-0">
         <MapComponent />

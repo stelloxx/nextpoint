@@ -29,13 +29,11 @@
   }
   body {
     font-family: var(--font-sans);
-    background: var(--color-dark);
+    background: var(--color-bg);
     color: var(--color-dark);
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
   }
   /* Leaflet overrides */
   .leaflet-container {

@@ -26,7 +26,7 @@ export function ChatScreen() {
   const [inputText, setInputText] = useState('');
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full pb-[84px]">
       {/* Header */}
       <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-surface">
         <div className="w-9" />

@@ -17,9 +17,9 @@ export default function App() {
 
   return (
     <AppContext.Provider value={{ activeScreen, city, citySelectorOpen, setScreen, setCity, openCitySelector, closeCitySelector }}>
-      <div className="w-[390px] h-[844px] rounded-[44px] overflow-hidden relative bg-bg shadow-[0_0_0_8px_#222,0_0_0_10px_#444,0_20px_60px_rgba(0,0,0,0.4)]">
+      <div className="w-full min-h-screen relative bg-bg">
         <StatusBar />
-        <div className="h-[calc(100%-44px)] relative overflow-hidden">
+        <div className="h-[calc(100dvh-44px)] relative overflow-hidden pb-[84px]">
           {activeScreen === 'map' && (
             <div className="absolute inset-0 flex flex-col">
               <MapScreen />
@@ -50,7 +50,7 @@ export default function App() {
 
         {/* City selector modal */}
         {citySelectorOpen && (
-          <div className="absolute inset-0 z-[100] flex items-center justify-center bg-black/30" onClick={closeCitySelector}>
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/30" onClick={closeCitySelector}>
             <div className="bg-surface rounded-2xl p-5 w-[280px] shadow-lg" onClick={e => e.stopPropagation()}>
               <div className="text-[16px] font-semibold mb-3">Select City</div>
               <div className="flex flex-col gap-2">

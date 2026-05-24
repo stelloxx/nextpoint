@@ -12,7 +12,7 @@ const tabs: { screen: Screen; label: string; icon: React.ReactNode }[] = [
 export function BottomNav() {
   const { activeScreen, setScreen } = useApp();
   return (
-    <nav className="absolute bottom-0 left-0 right-0 h-[84px] pb-[20px] bg-surface flex items-start justify-around pt-2 border-t border-border z-50">
+    <nav className="fixed bottom-0 left-0 right-0 h-[84px] pb-[20px] bg-surface flex items-start justify-around pt-2 border-t border-border z-[1001]">
       {tabs.map(({ screen, label, icon }) => {
         const active = activeScreen === screen;
         return (
