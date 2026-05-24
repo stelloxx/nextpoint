@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import { AppContext } from './hooks/useApp';
 import type { Screen, City } from './types';
 import { cities } from './api/data';
-import { StatusBar, BottomNav, MapScreen, ToursScreen, RoutesScreen, ChatScreen, ProfileScreen } from './components';
+import { BottomNav, MapScreen, ToursScreen, RoutesScreen, ChatScreen, ProfileScreen } from './components';
 
 const defaultCity: City = cities[0];
 
@@ -18,8 +18,7 @@ export default function App() {
   return (
     <AppContext.Provider value={{ activeScreen, city, citySelectorOpen, setScreen, setCity, openCitySelector, closeCitySelector }}>
       <div className="w-full min-h-screen relative bg-bg">
-        <StatusBar />
-        <div className="h-[calc(100dvh-44px)] relative overflow-hidden pb-[84px]">
+        <div className="relative overflow-hidden pb-[84px]">
           {activeScreen === 'map' && (
             <div className="absolute inset-0 flex flex-col">
               <MapScreen />
