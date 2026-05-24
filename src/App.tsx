@@ -18,7 +18,7 @@ export default function App() {
   return (
     <AppContext.Provider value={{ activeScreen, city, citySelectorOpen, setScreen, setCity, openCitySelector, closeCitySelector }}>
       <div className="w-full min-h-screen relative bg-bg">
-        <div className="relative overflow-hidden pb-[84px]">
+        <div className="relative overflow-hidden h-screen">
           {activeScreen === 'map' && (
             <div className="absolute inset-0 flex flex-col">
               <MapScreen />
